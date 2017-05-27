@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Dominio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <div *ngFor="let dominio of dominios">
+      <h6>{{dominio.nome}}</h6>
+      <p>{{dominio.descricao}}</p>
+    </div>
+  </ion-list>
+</ion-content>
