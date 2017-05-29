@@ -1,16 +1,26 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Diagnosticos</ion-title>
+    <ion-title>
+      Mobcare
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="content" padding>
+  
+  <ion-searchbar>
+  </ion-searchbar>
+  
   <ion-list>
-    <div *ngFor="let diagnostico of diagnosticos">
-      <h6>{{diagnostico.descricao}}</h6>
-      <p>Código: {{diagnostico.codigo}}</p>
-      <p>Classe: {{diagnostico.classe}}</p>
-      <p>Domínio: {{diagnostico.dominio}}</p>
-    </div>
+    <ion-card *ngFor="let diagnostico of diagnosticos">
+      <ion-card-header>
+        {{diagnostico.codigo}}
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{diagnostico.descricao}}</p>
+        <p>Classe: {{diagnostico.classe}}</p>
+        <p>Domínio: {{diagnostico.dominio}}</p>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>

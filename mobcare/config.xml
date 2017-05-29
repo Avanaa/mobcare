@@ -22,7 +22,6 @@
   <preference name="SplashShowOnlyFirstTime" value="false"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
-  <preference name="StatusBarBackgroundColor" value="#00796b" />
 
   <platform name="android">
     <allow-intent href="market:*"/>

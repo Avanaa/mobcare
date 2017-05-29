@@ -10,20 +10,9 @@ import { DiagnosticoPage } from '../diagnostico/diagnostico';
 })
 export class HomePage {
 
-  public dominios;
+  dominioTab : Component = DominioPage;
+  classeTab : Component = ClassePage;
+  diagnosticoTab : Component = DiagnosticoPage;
 
-  constructor(private _navCtrl: NavController) {}
-
-  dominio(){
-    this._navCtrl.push(DominioPage);
-  }
-
-  classe(){
-    this._navCtrl.push(ClassePage)
-  }
-
-  diagnostico(){
-    this._navCtrl.push(DiagnosticoPage)
-  }
-
+  constructor(private _navCtrl: NavController) {} 
 }

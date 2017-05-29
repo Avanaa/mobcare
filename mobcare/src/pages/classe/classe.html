@@ -1,12 +1,25 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>classe</ion-title>
+    <ion-title>
+      Mobcare
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="content" padding>
+  
+  <ion-searchbar>
+  </ion-searchbar>
+  
+  <ion-list>
+    <ion-card *ngFor="let classe of classes">
+      <ion-card-header>
+        {{classe.nome}}
+      </ion-card-header>
+      <ion-card-content>
+        <p>Domínio: {{classe.dominio}}</p>
+        <p>{{classe.descricao}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

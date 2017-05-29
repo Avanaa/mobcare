@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Dominio</ion-title>
+    <ion-title>
+      Mobcare
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="content" padding>
+  
+  <ion-searchbar>
+  </ion-searchbar>
+  
   <ion-list>
-    <div *ngFor="let dominio of dominios">
-      <h6>{{dominio.nome}}</h6>
-      <p>{{dominio.descricao}}</p>
-    </div>
+    <ion-card *ngFor="let dominio of dominios">
+      <ion-card-header>
+        {{dominio.nome}}
+      </ion-card-header>
+      <ion-card-content>
+        {{dominio.descricao}}
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>
