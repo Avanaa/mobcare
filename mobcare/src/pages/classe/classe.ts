@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { ClasseModel } from '../../models/classe-model';
-import { DominioModel } from '../../models/dominio-model';
 import { ClasseService } from '../../service/classe-service';
-import { DiagnosticoPage } from '../diagnostico/diagnostico';
 
 @IonicPage()
 @Component({
@@ -13,7 +11,6 @@ import { DiagnosticoPage } from '../diagnostico/diagnostico';
 export class ClassePage implements OnInit {
 
   public classes : ClasseModel[] = [];
-  public dominio : DominioModel;
 
   constructor(private _navCtrl: NavController, 
     private _navParams: NavParams,

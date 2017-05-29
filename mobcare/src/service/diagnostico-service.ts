@@ -25,10 +25,4 @@ export class DiagnosticoService{
             .map(res => res.json())
             .toPromise()
     }
-
-    getByDiagnostico(diagnostico) : Promise<any>{
-        return this._http.get(this.url.concat(diagnostico.id))
-            .map(res => res.json())
-            .toPromise();
-    }
 }

@@ -13,22 +13,4 @@ export class DominioService{
             .map(res => res.json())
             .toPromise();
     }
-
-    getByDominio(dominio) : Promise<any>{
-        return this._http.get(this.url.concat(dominio.id))
-            .map(res => res.json())
-            .toPromise();
-    }
-
-    getByClasse(classe) : Promise<any>{
-        return this._http.get(this.url.concat('classe/' + classe.id))
-            .map(res => res.json())
-            .toPromise()
-    }
-
-    getByDiagnostico(diagnostico) : Promise<any>{
-        return this._http.get(this.url.concat('diagnostico/' + diagnostico.id))
-            .map(res => res.json())
-            .toPromise();
-    }
 }
