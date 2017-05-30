@@ -10,7 +10,7 @@
       <button *ngIf="!searchClicked" ion-button icon-only (click)="more()">
         <ion-icon name="more"></ion-icon>
       </button>
-      <ion-searchbar  *ngIf="searchClicked"
+      <ion-searchbar *ngIf="searchClicked"
         [(ngModel)]="searchQueryText"
         [animated]="true"
         [showCancelButton]="true"
@@ -23,7 +23,7 @@
 
 <ion-content class="content" padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let dominio of dominios">
+    <ion-item-sliding *ngFor="let dominio of dominios | filterDominio:texto">
       <ion-item>
         {{dominio.nome}}
       </ion-item>

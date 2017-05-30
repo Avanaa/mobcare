@@ -12,6 +12,7 @@ export class ClassePage implements OnInit {
 
   public classes : ClasseModel[] = [];
   public searchClicked : boolean = false;
+  public texto : string = '';
 
   constructor(private _navCtrl: NavController, 
     private _navParams: NavParams,
@@ -45,13 +46,16 @@ export class ClassePage implements OnInit {
 
   onSearchClick() : void {
     this.searchClicked = !this.searchClicked;
+    if(!this.searchClicked){
+      this.texto = '';
+    }
   }
 
   more(){
     
   }
 
-  filter(event) : void {
-    
+  filter(event : any) : void {
+    this.texto = event.target.value;
   }
 }

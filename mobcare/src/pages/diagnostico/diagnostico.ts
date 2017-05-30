@@ -12,6 +12,7 @@ export class DiagnosticoPage implements OnInit {
 
   public diagnosticos : DiagnosticoModel[] = [];
   public searchClicked : boolean = false;
+  public texto : string = '';
 
   constructor(private _navCtrl: NavController, 
     private _navParams: NavParams,
@@ -38,20 +39,23 @@ export class DiagnosticoPage implements OnInit {
           this._alertCtrl.create({
             title : 'Ops!',
             subTitle : 'Ocorreu um erro ao solicitar os dados. Tente novamente mais tarde',
-            buttons : [{text : 'Ok', role : 'ok', handler : () => {this._navCtrl.pop()}}]
+            buttons : [{text : 'Ok'}]
           }).present();
       });
   }
 
   onSearchClick() : void {
     this.searchClicked = !this.searchClicked;
+    if(!this.searchClicked){
+      this.texto = '';
+    }
   }
 
   more(){
     
   }
 
-  filter(event) : void {
-
+  filter(event : any) : void {
+    this.texto = event.target.value;
   }
 }

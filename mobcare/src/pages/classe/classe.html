@@ -23,7 +23,7 @@
 
 <ion-content class="content" padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let classe of classes">
+    <ion-item-sliding *ngFor="let classe of classes | filterClasse:texto">
       <ion-item>
         {{classe.nome}}
       </ion-item>

@@ -24,7 +24,7 @@
 <ion-content class="content" padding>
   
   <ion-list>
-    <ion-card *ngFor="let diagnostico of diagnosticos">
+    <ion-card *ngFor="let diagnostico of diagnosticos | filterDiagnostico:texto">
       <ion-card-content>
         <p class="titulo">{{diagnostico.descricao}}</p>
         <p> </p>

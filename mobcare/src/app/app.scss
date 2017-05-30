@@ -15,6 +15,10 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+.hidden{
+    display: none !important;
+}
+
 .toolbar-background{
     background-color: #00d1b2;
 }
