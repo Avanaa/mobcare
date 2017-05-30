@@ -11,6 +11,7 @@ import { ClasseService } from '../../service/classe-service';
 export class ClassePage implements OnInit {
 
   public classes : ClasseModel[] = [];
+  public searchClicked : boolean = false;
 
   constructor(private _navCtrl: NavController, 
     private _navParams: NavParams,
@@ -40,5 +41,17 @@ export class ClassePage implements OnInit {
           buttons :[{text : 'Ok', role : 'ok', handler : () => {this._navCtrl.pop()}}]
         }).present();
       });
+  }
+
+  onSearchClick() : void {
+    this.searchClicked = !this.searchClicked;
+  }
+
+  more(){
+    
+  }
+
+  filter(event) : void {
+    
   }
 }

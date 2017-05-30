@@ -11,6 +11,7 @@ import { DiagnosticoModel } from '../../models/diagnostico-model';
 export class DiagnosticoPage implements OnInit {
 
   public diagnosticos : DiagnosticoModel[] = [];
+  public searchClicked : boolean = false;
 
   constructor(private _navCtrl: NavController, 
     private _navParams: NavParams,
@@ -40,5 +41,17 @@ export class DiagnosticoPage implements OnInit {
             buttons : [{text : 'Ok', role : 'ok', handler : () => {this._navCtrl.pop()}}]
           }).present();
       });
+  }
+
+  onSearchClick() : void {
+    this.searchClicked = !this.searchClicked;
+  }
+
+  more(){
+    
+  }
+
+  filter(event) : void {
+
   }
 }

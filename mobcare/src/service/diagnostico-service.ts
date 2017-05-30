@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class DiagnosticoService{
 
-    private url : string = 'http://192.168.0.101:3001/diagnostico/'
+    private url : string = 'http://192.168.0.103:3001/diagnostico/'
     
     constructor(private _http: Http){}
 

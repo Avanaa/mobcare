@@ -1,25 +1,38 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
+    <ion-title *ngIf="!searchClicked">
       Mobcare
     </ion-title>
+    <ion-buttons end>
+      <button *ngIf="!searchClicked" ion-button icon-only (click)="onSearchClick()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button *ngIf="!searchClicked" ion-button icon-only (click)="more()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+      <ion-searchbar *ngIf="searchClicked"
+        [(ngModel)]="searchQueryText"
+        [animated]="true"
+        [showCancelButton]="true"
+        (ionInput)="filter($event)"
+        (ionCancel)="onSearchClick()">
+      </ion-searchbar>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="content" padding>
   
-  <ion-searchbar>
-  </ion-searchbar>
-  
   <ion-list>
     <ion-card *ngFor="let diagnostico of diagnosticos">
       <ion-card-header>
-        {{diagnostico.codigo}}
+        {{diagnostico.descricao}}
       </ion-card-header>
       <ion-card-content>
-        <p>{{diagnostico.descricao}}</p>
+        <p></p>
         <p>Classe: {{diagnostico.classe}}</p>
         <p>Domínio: {{diagnostico.dominio}}</p>
+        <p>Código: {{diagnostico.codigo}}</p>
       </ion-card-content>
     </ion-card>
   </ion-list>

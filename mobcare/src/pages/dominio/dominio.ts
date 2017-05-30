@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, AlertController, LoadingController } from 'ionic-angular';
 import { DominioModel } from '../../models/dominio-model';
 import { DominioService } from '../../service/dominio-service';
-import { ClassePage } from '../classe/classe';
 import { HomePage } from '../home/home';
 
 @IonicPage()
@@ -13,6 +12,7 @@ import { HomePage } from '../home/home';
 export class DominioPage implements OnInit {
 
   public dominios : DominioModel[] = [];
+  public searchClicked : boolean = false;
 
   constructor(private _navCtrl: NavController,
     private _service : DominioService,
@@ -40,5 +40,17 @@ export class DominioPage implements OnInit {
           buttons: [{text : 'Ok', role : 'ok', handler : () => {this._navCtrl.setRoot(HomePage)}}]
         }).present();
       });
+  }
+
+  onSearchClick() : void {
+    this.searchClicked = !this.searchClicked;
+  }
+
+  more(){
+    
+  }
+
+  filter(event) : void {
+    console.log('Search');
   }
 }
