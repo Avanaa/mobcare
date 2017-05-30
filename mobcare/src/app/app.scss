@@ -33,18 +33,26 @@
 
 .tab-button-text{
     color: #ffffff;
-}
-
-.searchbar-clear-icon{
-    color: #00d1b2;
-}
-
-.searchbar-input{
-    color: #00d1b2;
+    font-weight: bold;
 }
 
 .scroll-content{
-    background-color: #eeeeee ;
+    background-color: #ffffff ;
+}
+
+.item {
+    background-color: #ffffff;
+    color: #00d1b2;
+    font-weight: bold;
+}
+
+.button-sliding{
+    background-color: #00d1b2;
+}
+
+.button:active{
+    background-color: #eeeeee;
+    color: #00d1b2;
 }
 
 .card{

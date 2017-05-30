@@ -3,6 +3,7 @@ import { IonicPage, NavController, AlertController, LoadingController } from 'io
 import { DominioModel } from '../../models/dominio-model';
 import { DominioService } from '../../service/dominio-service';
 import { HomePage } from '../home/home';
+import { FilterDominio } from './dominio.pipes';
 
 @IonicPage()
 @Component({

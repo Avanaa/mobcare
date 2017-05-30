@@ -25,11 +25,9 @@
   
   <ion-list>
     <ion-card *ngFor="let diagnostico of diagnosticos">
-      <ion-card-header>
-        {{diagnostico.descricao}}
-      </ion-card-header>
       <ion-card-content>
-        <p></p>
+        <p class="titulo">{{diagnostico.descricao}}</p>
+        <p> </p>
         <p>Classe: {{diagnostico.classe}}</p>
         <p>Domínio: {{diagnostico.dominio}}</p>
         <p>Código: {{diagnostico.codigo}}</p>
