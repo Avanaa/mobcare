@@ -4,16 +4,8 @@ import { DiagnosticoPage } from './diagnostico';
 import { FilterDiagnostico } from './diagnostico.pipes';
 
 @NgModule({
-  declarations: [
-    DiagnosticoPage,
-    FilterDiagnostico
-  ],
-  imports: [
-    IonicPageModule.forChild(DiagnosticoPage),
-  ],
-  exports: [
-    DiagnosticoPage,
-    FilterDiagnostico
-  ]
+  declarations: [ DiagnosticoPage, FilterDiagnostico ],
+  imports: [ IonicPageModule.forChild(DiagnosticoPage) ],
+  exports: [ DiagnosticoPage, FilterDiagnostico ]
 })
 export class DiagnosticoModule {}

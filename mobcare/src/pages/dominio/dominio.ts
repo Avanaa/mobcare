@@ -41,7 +41,7 @@ export class DominioPage implements OnInit {
           buttons: [{text : 'Ok', role : 'ok', handler : () => {this._platform.exitApp()}}]
         }).present();
       });
-  }
+  } // Fim de ngOnInit
 
   onSearchClick() : void {
     this.searchClicked = !this.searchClicked;

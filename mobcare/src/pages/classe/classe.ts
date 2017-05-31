@@ -28,7 +28,6 @@ export class ClassePage implements OnInit {
 
     loader.present();
 
-    // Seleciona todas as classes
     this._service.getClasses()
       .then(resultado => {
         this.classes = resultado;
@@ -42,7 +41,7 @@ export class ClassePage implements OnInit {
           buttons :[{text : 'Ok', role : 'ok', handler : () => {this._navCtrl.pop()}}]
         }).present();
       });
-  }
+  } // Fim de ngOnInit
 
   onSearchClick() : void {
     this.searchClicked = !this.searchClicked;

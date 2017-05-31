@@ -28,7 +28,6 @@ export class DiagnosticoPage implements OnInit {
 
     loader.present();
 
-    // Seleciona todos os diagnósticos
     this._service.getDiagnosticos()
       .then(result => {
           this.diagnosticos = result;
@@ -42,7 +41,7 @@ export class DiagnosticoPage implements OnInit {
             buttons : [{text : 'Ok'}]
           }).present();
       });
-  }
+  } // Fim de ngOnInit
 
   onSearchClick() : void {
     this.searchClicked = !this.searchClicked;

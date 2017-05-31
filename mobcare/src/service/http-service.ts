@@ -4,12 +4,11 @@ import { Http } from '@angular/http';
 @Injectable()
 export class HttpService{
 
-    private _url : string = 'http://192.168.0.103:3001';
-    private _urlDominio : string = this._url.concat('/dominio/');
-    private _urlClasse : string = this._url.concat('/classe/');
-    private _urlDiagnostico : string = this._url.concat('/diagnostico/');
+    private _api : string = 'http://192.168.0.103:3001';
+    private _urlDominio : string = this._api.concat('/dominio/');
+    private _urlClasse : string = this._api.concat('/classe/');
+    private _urlDiagnostico : string = this._api.concat('/diagnostico/');
 
-    
     constructor(private _http: Http){}
 
     getDominios() : Promise<any>{

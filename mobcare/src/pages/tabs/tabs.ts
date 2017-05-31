@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { DominioPage } from '../dominio/dominio';
 import { ClassePage } from '../classe/classe';
 import { DiagnosticoPage } from '../diagnostico/diagnostico';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'tabs-page',
+  templateUrl: 'tabs.html'
 })
-export class HomePage {
+export class Tabs {
 
   dominioTab : Component = DominioPage;
   classeTab : Component = ClassePage;
   diagnosticoTab : Component = DiagnosticoPage;
 
-  constructor(private _navCtrl: NavController) {} 
+  constructor() {} 
 }
