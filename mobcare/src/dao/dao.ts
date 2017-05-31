@@ -1,1 +1,1 @@
-// Acesso ao banco
+// Data access
