@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, AlertController, LoadingController, Platform } from 'ionic-angular';
 import { DominioModel } from '../../models/dominio-model';
-import { DominioService } from '../../service/dominio-service';
+import { HttpService } from '../../service/http-service';
 
 @IonicPage()
 @Component({
@@ -15,7 +15,7 @@ export class DominioPage implements OnInit {
   public texto : string = '';
 
   constructor(private _navCtrl: NavController,
-    private _service : DominioService,
+    private _service : HttpService,
     private _alertCtrl : AlertController,
     private _loadingCtrl: LoadingController,
     private _platform : Platform) {}
@@ -28,7 +28,7 @@ export class DominioPage implements OnInit {
 
     loader.present();
 
-    this._service.getAll()
+    this._service.getDominios()
       .then(result => {
         this.dominios = result;
         loader.dismiss();
@@ -56,5 +56,9 @@ export class DominioPage implements OnInit {
 
   filter(event ) : void {
     this.texto = event.target.value;
+  }
+
+  detalhes(dominio : DominioModel){
+    console.log(dominio.nome);
   }
 }

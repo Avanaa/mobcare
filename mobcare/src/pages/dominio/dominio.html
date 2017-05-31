@@ -1,34 +1,41 @@
 <ion-header>
   <ion-navbar>
-    <ion-title *ngIf="!searchClicked">
-      Mobcare
-    </ion-title>
-    <ion-buttons end>
-      <button *ngIf="!searchClicked" ion-button icon-only (click)="onSearchClick()">
-        <ion-icon name="search"></ion-icon>
-      </button>
-      <button *ngIf="!searchClicked" ion-button icon-only (click)="more()">
-        <ion-icon name="more"></ion-icon>
-      </button>
-      <ion-searchbar *ngIf="searchClicked"
-        [(ngModel)]="searchQueryText"
-        [animated]="true"
-        [showCancelButton]="true"
-        (ionInput)="filter($event)"
-        (ionCancel)="onSearchClick()">
-      </ion-searchbar>
-    </ion-buttons>
+    <ion-toolbar>
+      <ion-title *ngIf="!searchClicked">
+        Mobcare
+      </ion-title>
+      <ion-buttons end>
+        <button *ngIf="!searchClicked" ion-button icon-only (click)="onSearchClick()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+        <button *ngIf="!searchClicked" ion-button icon-only (click)="more()">
+          <ion-icon name="more"></ion-icon>
+        </button>
+        <ion-searchbar *ngIf="searchClicked"
+          [(ngModel)]="searchQueryText"
+          [animated]="true"
+          [showCancelButton]="true"
+          (ionInput)="filter($event)"
+          (ionCancel)="onSearchClick()">
+        </ion-searchbar>
+      </ion-buttons>
+    </ion-toolbar>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="content" padding>
   <ion-list>
     <ion-item-sliding *ngFor="let dominio of dominios | filterDominio:texto">
-      <ion-item>
+      <ion-item class="item">
         {{dominio.nome}}
       </ion-item>
+      <ion-item-options side="left">
+        <button ion-button class="button-sliding-left">
+          {{dominio.taxonomia}} NANDA
+        </button>
+      </ion-item-options>
       <ion-item-options side="right">
-        <button ion-button class="button-sliding">
+        <button ion-button class="button-sliding" (click)="detalhes(dominio)">
           Detalhes
         </button>
       </ion-item-options>

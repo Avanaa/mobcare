@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
-import { DiagnosticoService } from '../../service/diagnostico-service'
+import { HttpService } from '../../service/http-service';
 import { DiagnosticoModel } from '../../models/diagnostico-model';
 
 @IonicPage()
@@ -16,7 +16,7 @@ export class DiagnosticoPage implements OnInit {
 
   constructor(private _navCtrl: NavController, 
     private _navParams: NavParams,
-    private _service: DiagnosticoService,
+    private _service: HttpService,
     private _loadingCtrl : LoadingController,
     private _alertCtrl : AlertController) {}
 
@@ -29,7 +29,7 @@ export class DiagnosticoPage implements OnInit {
     loader.present();
 
     // Seleciona todos os diagnósticos
-    this._service.getAll()
+    this._service.getDiagnosticos()
       .then(result => {
           this.diagnosticos = result;
           loader.dismiss();

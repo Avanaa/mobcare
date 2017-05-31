@@ -19,6 +19,10 @@
     display: none !important;
 }
 
+.toolbar{
+    padding: 0 !important;
+}
+
 .toolbar-background{
     background-color: #00d1b2;
 }
@@ -48,6 +52,12 @@
     background-color: #ffffff;
     color: #00d1b2;
     font-weight: bold;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.label{
+    padding: 2%;
 }
 
 .button-sliding{
@@ -57,6 +67,12 @@
 .button:active{
     background-color: #eeeeee;
     color: #00d1b2;
+}
+
+.button-sliding-left{
+    background-color: #eeeeee;
+    color: #00d1b2;
+    font-weight: bold;
 }
 
 .card{

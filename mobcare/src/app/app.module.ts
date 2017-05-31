@@ -12,9 +12,7 @@ import 'rxjs/add/operator/toPromise';
 import { DominioModule } from '../pages/dominio/dominio.module';
 import { ClasseModule } from '../pages/classe/classe.module';
 import { DiagnosticoModule } from '../pages/diagnostico/diagnostico.module';
-import { DominioService } from '../service/dominio-service';
-import { ClasseService } from '../service/classe-service';
-import { DiagnosticoService } from '../service/diagnostico-service';
+import { HttpService } from '../service/http-service';
 
 @NgModule({
   declarations: [
@@ -38,9 +36,7 @@ import { DiagnosticoService } from '../service/diagnostico-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DominioService,
-    ClasseService,
-    DiagnosticoService
+    HttpService
   ]
 })
 export class AppModule {}

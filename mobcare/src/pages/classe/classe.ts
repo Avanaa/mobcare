@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { ClasseModel } from '../../models/classe-model';
-import { ClasseService } from '../../service/classe-service';
+import { HttpService } from '../../service/http-service';
 
 @IonicPage()
 @Component({
@@ -16,7 +16,7 @@ export class ClassePage implements OnInit {
 
   constructor(private _navCtrl: NavController, 
     private _navParams: NavParams,
-    private _service : ClasseService,
+    private _service : HttpService,
     private _alertCtrl : AlertController,
     private _loadingCtrl : LoadingController) {}
 
@@ -29,7 +29,7 @@ export class ClassePage implements OnInit {
     loader.present();
 
     // Seleciona todas as classes
-    this._service.getAll()
+    this._service.getClasses()
       .then(resultado => {
         this.classes = resultado;
         loader.dismiss();
